@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- General -->
+    <dimen name="default_padding">16dp</dimen>
+    <dimen name="small_margin_or_padding">8dp</dimen>
+    <dimen name="radius">24dp</dimen>
+    <dimen name="icon_size">24dp</dimen>
+    
+    <!-- WelcomeActivity -->
+    <dimen name="paragraph_spacing">8dp</dimen>
+
+    <!-- MainActivity -->
+    <dimen name="color_preview">36dp</dimen>
+    <dimen name="color_preview_radius">18dp</dimen>
+
+    <!-- ExceptionsActivity -->
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="infinite_progress">50dp</dimen>
+    <dimen name="app_icon">40dp</dimen>
+</resources>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome">Bienvenue dans Rotation Lock Bubble!</string>
+    <string name="welcome_desc_1">RL Bubble est une application qui vous permet de changer l\'orientation de votre écran lorsque vous le souhaitez uniquement.</string>
+    <string name="welcome_desc_2">Lorsque vous penchez votre téléphone, la bulle suivant apparaîtra et il vous suffira d\'appuyer dessus pour changer l\'orientation de votre écran.</string>
+    <string name="welcome_desc_3">La bulle peut être customisé de nombreuses manières, faites-en le vôtre !</string>
+    <string name="understood">Compris</string>
+
+    <!-- Main activity -->
+    <string name="enable">Activer</string>
+    <string name="appearance">Apparence</string>
+    <string name="bubble_color">Couleur de la bulle</string>
+    <string name="icon_color">Couleur de l\'icone</string>
+    <string name="size">Taille</string>
+    <string name="small">Petite</string>
+    <string name="medium">Moyenne</string>
+    <string name="large">Grande</string>
+    <string name="position">Position</string>
+    <string name="side">Côté</string>
+    <string name="side_popup_desc">De quel côté doit être la bulle ?</string>
+    <string name="left">Gauche</string>
+    <string name="top">Haut</string>
+    <string name="right">Droit</string>
+    <string name="bottom">Bas</string>
+    <string name="offset">Décallage</string>
+    <string name="others">Autres</string>
+    <string name="behavior_of_the_app">Comportement</string>
+    <string name="behavior_desc">Modifier le comportement de l\'application</string>
+    <string name="apps_to_be_excluded">Applications à exclure</string>
+    <string name="no_exception">Aucune exception</string>
+    <string name="one_exception">1 exception</string>
+    <string name="many_exceptions">%d exceptions</string>
+    <string name="notifications_desc">Masquer les notifications relatives à l\'application</string>
+    <string name="about_desc">Informations à propos de l\'application</string>
+
+    <!-- Behavior activity -->
+    <string name="behavior">Comportement</string>
+    <string name="portrait_on_lock">Mode portrait après verrouillage</string>
+    <string name="portrait_on_lock_desc">Change l\'orientation en mode portrait après que le téléphone ait été verrouillé</string>
+    <string name="portrait_auto">Mode portrait automatique</string>
+    <string name="portrait_auto_desc">Change automatiquement l\'orientation en mode portrait après avoir été en mode paysage</string>
+    <string name="duration">Durée d\'affichage de la bulle</string>
+    <string name="seconds">%d secondes</string>
+
+    <!-- Exceptions activity -->
+    <string name="exceptions">Exceptions</string>
+    <string name="exceptions_desc">Décochez une application afin que la bulle de rotation n\'apparaisse pas quand vous tournez votre téléphone.</string>
+    <string name="check_all">Tout cocher</string>
+    <string name="uncheck_all">Tout décocher</string>
+
+    <!-- Notifications activity -->
+    <string name="notifications">Notifications</string>
+    <string name="app_notification">Notification de l\'application</string>
+    <string name="app_notification_desc">Afin d\'afficher le bulle de rotation sur les autres applications, RL Bubble doit afficher une notification. Si vous souhaitez la masquer, vous pouvez le faire depuis les paramètres de votre téléphone en cliquant sur le bouton ci-dessous.</string>
+    <string name="app_notification_settings">Paramètres des notifications de l\'application</string>
+    <string name="system_notification">Notification du système</string>
+    <string name="system_notification_desc">Lorsque la notification de l\'application est masquée, le système affiche à son tour une notification. Si vous souhaitez la masquer, vous pouvez le faire depuis les paramètres de votre téléphone en cliquant sur le bouton ci-dessous.</string>
+    <string name="system_notifications_settings">Paramètres des notifications du système</string>
+
+    <!-- About activity -->
+    <string name="about">À propos</string>
+    <string name="charles_annic">Charles Annic</string>
+    <string name="cannic_mail">cannic.apps@gmail.com</string>
+    <string name="support_development">Supporter le développement</string>
+    <string name="rate">Noter</string>
+    <string name="rate_desc">Quel que soit votre avis sur mon application, partagez-le sur le Google Play Store !</string>
+    <string name="report_bugs">Rapporter des bugs</string>
+    <string name="report_bugs_desc">Si vous rencontrez un bug, vous pouvez m\'en faire part part mail. Je ferais mon possible pour le corriger dans les plus brefs délais.</string>
+    <string name="improve_app">Améliorer l\'application</string>
+    <string name="improve_app_desc">Vous pouvez retrouver le code source sur GitHub pour participer à son amélioration. N\'hésitez pas à traduire l\'application dans votre langue !</string>
+    <string name="translate">Traduire</string>
+    <string name="translate_desc">Si l\'application ne supporte pas encore votre langue, vous pouvez la traduire et me l\'envoyer par mail. Je pourrais ensuite l\'ajouter en vous citant.</string>
+    <string name="donate">Faire un don</string>
+    <string name="donate_desc">Cette application est gratuite et ne contient aucune pub. Si vous le souhaitez et que vous le pouvez, n\'hésitez pas à faire un don. Merci !</string>
+    <string name="library">Librairie</string>
+    <string name="libraries">Librairies</string>
+    <string name="colorpickerview">ColorPickView de skydoves</string>
+    <string name="colorpickerview_desc">🎨The most standard and powerful colorpicker library.</string>
+
+    <!-- Overlays permission popup -->
+    <string name="overlays_permission_popup_desc">Pour fonctionner, RL Bubble a besoin de se superposer aux autres applications. Cliquez ici pour activer la permission.</string>
+
+    <!-- Accessibility permission popup -->
+    <string name="accessibility_permission_popup_desc">Pour pouvoir exclure certaines applications, RL Bubble doit avoir accès aux services d\'accessibilité de l\'appareil.\nCette permission permet à RL Bubble de connaître quelle application est en cours d\'utilisation.</string>
+    <string name="system_settings_accessibility_desc">Pour pouvoir exclure certaines applications, RL Bubble doit avoir accès aux services d\'accessibilité de l\'appareil.\n\nCette permission permet à RL Bubble de connaître quelle application est en cours d\'utilisation.\n\nAucune donnée personnelle n\'est collectée.</string>
+
+    <!-- Various -->
+    <string name="missing_permission">Permission manquante</string>
+    <string name="cancel">Annuler</string>
+    <string name="confirm">Confirmer</string>
+    <string name="give_permission">Donner la permission</string>
+
+    <!-- Notification -->
+    <string name="notification_title">RL Bubble est activée</string>
+    <string name="notification_desc">Vous pouvez cacher la notification depuis l\'application.</string>
+</resources>

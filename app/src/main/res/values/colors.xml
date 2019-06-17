@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="lightPrimary">#C0FFFFFF</color>
+    <color name="lightPrimaryDark">#C0FFFFFF</color>
+
+    <color name="darkPrimary">#C0151515</color>
+    <color name="darkPrimaryDark">#C0151515</color>
+
+    <color name="colorAccent">#3d5afe</color>
+    <color name="colorAccentAlpha">#553d5afe</color>
+
+    <color name="default_bubble_background">#9000</color>
+    <color name="default_bubble_icon">#DFFF</color>
+</resources>
