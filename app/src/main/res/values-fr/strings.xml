@@ -65,7 +65,7 @@
     <string name="rate">Noter</string>
     <string name="rate_desc">Quel que soit votre avis sur mon application, partagez-le sur le Google Play Store !</string>
     <string name="report_bugs">Rapporter des bugs</string>
-    <string name="report_bugs_desc">Si vous rencontrez un bug, vous pouvez m\'en faire part part mail. Je ferais mon possible pour le corriger dans les plus brefs délais.</string>
+    <string name="report_bugs_desc">Si vous rencontrez un bug, vous pouvez m\'en faire part par mail. Je ferais mon possible pour le corriger dans les plus brefs délais.</string>
     <string name="improve_app">Améliorer l\'application</string>
     <string name="improve_app_desc">Vous pouvez retrouver le code source sur GitHub pour participer à son amélioration. N\'hésitez pas à traduire l\'application dans votre langue !</string>
     <string name="translate">Traduire</string>

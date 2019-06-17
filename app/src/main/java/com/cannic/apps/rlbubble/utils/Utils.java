@@ -209,7 +209,8 @@ public class Utils {
      */
     public static void updateBubbleSize(Context context, int px) {
         Utils.setPreferences(context, context.getResources().getString(R.string.size_preference), px);
-        BubbleService.getInstance().updateBubble();
+        if (BubbleService.getInstance() != null)
+            BubbleService.getInstance().updateBubble();
     }
 
     /**
@@ -219,7 +220,8 @@ public class Utils {
      */
     public static void updateBubbleDuration(Context context, int seconds) {
         Utils.setPreferences(context, context.getResources().getString(R.string.duration_preference), seconds);
-        BubbleService.getInstance().updateBubble();
+        if (BubbleService.getInstance() != null)
+            BubbleService.getInstance().updateBubble();
     }
 
     /**
@@ -229,8 +231,8 @@ public class Utils {
      */
     public static void updateBubbleSide(Context context, int side) {
         Utils.setPreferences(context, context.getResources().getString(R.string.side_preference), side);
-        BubbleService.getInstance().updateBubble();
-    }
+        if (BubbleService.getInstance() != null)
+            BubbleService.getInstance().updateBubble();    }
 
     /**
      * Changes the bubble background color preferences.
@@ -239,7 +241,8 @@ public class Utils {
      */
     public static void updateBubbleBackgroundColor(Context context, int color) {
         Utils.setPreferences(context, context.getResources().getString(R.string.background_color_preference), color);
-        BubbleService.getInstance().updateBubble();
+        if (BubbleService.getInstance() != null)
+            BubbleService.getInstance().updateBubble();
     }
 
     /**
@@ -249,7 +252,8 @@ public class Utils {
      */
     public static void updateBubbleIconColor(Context context, int color) {
         Utils.setPreferences(context, context.getResources().getString(R.string.icon_color_preference), color);
-        BubbleService.getInstance().updateBubble();
+        if (BubbleService.getInstance() != null)
+            BubbleService.getInstance().updateBubble();
     }
 
     /**
@@ -259,7 +263,8 @@ public class Utils {
      */
     public static void updateBubbleOffset(Context context, float offset) {
         Utils.setPreferences(context, context.getResources().getString(R.string.offset_preference), offset);
-        BubbleService.getInstance().updateBubble();
+        if (BubbleService.getInstance() != null)
+            BubbleService.getInstance().updateBubble();
     }
 
 
