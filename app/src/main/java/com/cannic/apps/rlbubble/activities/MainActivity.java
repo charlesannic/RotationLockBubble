@@ -229,14 +229,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // If the application has permission to overlay, the dialog is dismissed and the bubble is displayed.
         if (Settings.canDrawOverlays(this)) {
-            if (permissionDialog != null)
+            if (permissionDialog != null && permissionDialog.isShowing())
                 permissionDialog.dismiss();
-            if(BubbleService.getInstance() != null)
+            if(BubbleService.getInstance() != null) {
+                BubbleService.getInstance().hideBubble();
                 BubbleService.getInstance().showBubble(null); // We pass null as a parameter to indicate that the bubble must have no effect, we just want to show it.
+            }
         }
         // Otherwise, we ask for permission.
         else if (permissionDialog == null || !permissionDialog.isShowing()) {
             permissionDialog = Utils.BuildOverlayPermissionDialog(this);
+            permissionDialog.show();
         }
 
         // If accessibility services are not given, the user is informed that the exceptions cannot work.
@@ -330,7 +333,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * Sets the TextView text indicating the side of the bubble, according to preferences.
      */
     private void setSideTextView() {
-        switch (Utils.getPreferences(this, getResources().getString(R.string.side), 0)) {
+        switch (Utils.getPreferences(this, getResources().getString(R.string.side_preference), 0)) {
             case 0:
                 tvSide.setText(getResources().getString(R.string.left));
                 break;

@@ -18,7 +18,9 @@
         <item name="materialAlertDialogTheme">@style/LightAlertDialogTheme</item>
 
         <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@color/lightPrimary</item>
 
+        <item name="android:windowLightNavigationBar">true</item>
         <item name="android:windowLightStatusBar">true</item>
     </style>
 
@@ -31,7 +33,9 @@
         <item name="materialAlertDialogTheme">@style/DarkAlertDialogTheme</item>
 
         <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@color/darkPrimary</item>
 
+        <item name="android:windowLightNavigationBar">false</item>
         <item name="android:windowLightStatusBar">false</item>
     </style>
 

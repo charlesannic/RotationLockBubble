@@ -127,7 +127,7 @@ public class ExceptionsActivity extends AppCompatActivity implements View.OnClic
 
         // If the application has accessibility permission, the dialog is dismissed.
         if (Utils.isAccessibilitySettingsOn(this)) {
-            if (permissionDialog != null)
+            if (permissionDialog != null && permissionDialog.isShowing())
                 permissionDialog.dismiss();
         }
         // Otherwise, we ask for permission.
