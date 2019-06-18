@@ -2,6 +2,7 @@ package com.cannic.apps.rlbubble.services;
 
 import android.accessibilityservice.AccessibilityService;
 import android.animation.ValueAnimator;
+import android.annotation.TargetApi;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -18,6 +19,8 @@ import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.graphics.Point;
 import android.hardware.SensorManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.CountDownTimer;
 import android.provider.Settings;
 import android.view.Display;
@@ -30,6 +33,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
 
+import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 
 import com.cannic.apps.rlbubble.activities.MainActivity;
@@ -118,20 +122,39 @@ public class BubbleService extends AccessibilityService {
         lockEventReceiver = new LockEventReceiver();
         registerReceiver(lockEventReceiver, filter);
 
-        Intent notificationIntent = new Intent(this, NotificationsActivity.class);
+        Notification notification;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            Intent notificationIntent = new Intent();
+            notificationIntent.setAction("android.settings.APP_NOTIFICATION_SETTINGS");
+            notificationIntent.putExtra("android.provider.extra.APP_PACKAGE", getPackageName());
+            PendingIntent pendingIntent = PendingIntent.getActivity(this, 0,
+                    notificationIntent, 0);
 
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0,
-                notificationIntent, 0);
+            String channelId = createNotificationChannel("SRLBubbleService", "Screen Rotation Lock Bubble Service");
 
-        String channelId = createNotificationChannel("SRLBubbleService", "Screen Rotation Lock Bubble Service");
+            notification = new NotificationCompat.Builder(this, channelId)
+                    .setSmallIcon(R.drawable.ic_screen_rotation_left)
+                    .setContentTitle(getResources().getString(R.string.notification_title)).setBadgeIconType(NotificationCompat.BADGE_ICON_NONE)
+                    .setCategory(Notification.CATEGORY_STATUS)
+                    .setOngoing(true)
+                    .setStyle(new NotificationCompat.BigTextStyle())
+                    .setContentText(getResources().getString(R.string.notification_desc)).setVisibility(NotificationCompat.VISIBILITY_SECRET)
+                    .setContentIntent(pendingIntent).build();
+        } else {
+            Intent notificationIntent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+            notificationIntent.setData(Uri.parse("package:" + getPackageName()));
 
-        Notification notification = new NotificationCompat.Builder(this, channelId)
-                .setSmallIcon(R.drawable.ic_screen_rotation_left)
-                .setContentTitle(getResources().getString(R.string.notification_title)).setBadgeIconType(NotificationCompat.BADGE_ICON_NONE)
-                .setCategory(Notification.CATEGORY_STATUS)
-                .setOngoing(true)
-                .setContentText(getResources().getString(R.string.notification_desc)).setVisibility(NotificationCompat.VISIBILITY_SECRET)
-                .setContentIntent(pendingIntent).build();
+            PendingIntent pendingIntent = PendingIntent.getActivity(this, 0,
+                    notificationIntent, 0);
+
+            notification = new NotificationCompat.Builder(this)
+                    .setSmallIcon(R.drawable.ic_screen_rotation_left)
+                    .setContentTitle(getResources().getString(R.string.notification_title)).setBadgeIconType(NotificationCompat.BADGE_ICON_NONE)
+                    .setCategory(Notification.CATEGORY_STATUS)
+                    .setOngoing(true)
+                    .setContentText(getResources().getString(R.string.notification_desc)).setVisibility(NotificationCompat.VISIBILITY_SECRET)
+                    .setContentIntent(pendingIntent).build();
+        }
 
         startForeground(FOREGROUND_ID,
                 notification);
@@ -197,10 +220,7 @@ public class BubbleService extends AccessibilityService {
         if(listener.canDetectOrientation())
             listener.enable();
 
-        Utils.setPreferences(this, getResources().getString(R.string.enable_preference), 1);
         isRunning = true;
-
-        //showBubble(this, null);
     }
 
     private boolean isCurrentAppExcluded() {
@@ -224,7 +244,6 @@ public class BubbleService extends AccessibilityService {
 
         if (bubble != null) windowManager.removeView(bubble);
 
-        Utils.setPreferences(this, getResources().getString(R.string.enable_preference), 0);
         isRunning = false;
     }
 
@@ -279,6 +298,7 @@ public class BubbleService extends AccessibilityService {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private String createNotificationChannel(String channelId, String channelName) {
         NotificationChannel chan = new NotificationChannel(channelId,
                 channelName, NotificationManager.IMPORTANCE_MIN);
@@ -296,10 +316,16 @@ public class BubbleService extends AccessibilityService {
     }
 
     private void setBubble() {
+        int layoutParams;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            layoutParams = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
+        } else {
+            layoutParams = WindowManager.LayoutParams.TYPE_PHONE;
+        }
         final WindowManager.LayoutParams params = new WindowManager.LayoutParams(
                 WindowManager.LayoutParams.WRAP_CONTENT,
                 WindowManager.LayoutParams.WRAP_CONTENT,
-                WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
+                layoutParams,
                 WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
                 PixelFormat.TRANSLUCENT);
         params.screenOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;

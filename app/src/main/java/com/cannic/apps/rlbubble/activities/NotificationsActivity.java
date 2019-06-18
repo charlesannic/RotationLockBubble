@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 import android.view.WindowInsets;
 import android.widget.Button;
@@ -54,10 +57,12 @@ public class NotificationsActivity extends AppCompatActivity implements View.OnC
         });
 
         btnAppSettings = findViewById(R.id.app_notification_settings);
-        btnSystemSettings = findViewById(R.id.system_notification_settings);
-
         btnAppSettings.setOnClickListener(this);
-        btnSystemSettings.setOnClickListener(this);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            btnSystemSettings = findViewById(R.id.system_notification_settings);
+            btnSystemSettings.setOnClickListener(this);
+        }
 
         ivArrowBack = findViewById(R.id.iv_arrow_back);
         ivArrowBack.setOnClickListener(this);
@@ -66,20 +71,20 @@ public class NotificationsActivity extends AppCompatActivity implements View.OnC
     @Override
     public void onClick(View v) {
         if (v == btnAppSettings) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                Intent intent = new Intent();
+                intent.setAction("android.settings.APP_NOTIFICATION_SETTINGS");
+                intent.putExtra("android.provider.extra.APP_PACKAGE", getPackageName());
+                startActivity(intent);
+            } else {
+                Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                intent.setData(Uri.parse("package:" + getPackageName()));
+                startActivity(intent);
+            }
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && v == btnSystemSettings) {
             Intent intent = new Intent();
             intent.setAction("android.settings.APP_NOTIFICATION_SETTINGS");
-            //String mPackageName = (new ActivityManager()).getRunningAppProcesses().get(0).
-            // for Android 8 and above
-            intent.putExtra("android.provider.extra.APP_PACKAGE", getPackageName());
-
-            startActivity(intent);
-        } else if (v == btnSystemSettings) {
-            Intent intent = new Intent();
-            intent.setAction("android.settings.APP_NOTIFICATION_SETTINGS");
-
-            // for Android 8 and above
             intent.putExtra("android.provider.extra.APP_PACKAGE", "android");
-
             startActivity(intent);
         } else if (v == ivArrowBack)
             finish();

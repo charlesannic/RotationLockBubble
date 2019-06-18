@@ -169,10 +169,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (Settings.canDrawOverlays(MainActivity.this)) {
                     isServiceAskedToStop = !isChecked;
-                    if (isChecked)
+                    if (isChecked) {
+                        Utils.setPreferences(MainActivity.this, getResources().getString(R.string.enable_preference), 1);
                         startService(new Intent(MainActivity.this, BubbleService.class));
-                    else
+                    } else {
+                        Utils.setPreferences(MainActivity.this, getResources().getString(R.string.enable_preference), 0);
                         stopService(new Intent(MainActivity.this, BubbleService.class));
+                    }
                 }
             }
         });
