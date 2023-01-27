@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome">Benvenuto su Rotation Lock Bubble!</string>
+    <string name="welcome_desc_1">RL Bubble e' un\'applicazione che consente di cambiare l\'orientamento dello schermo solo quando lo desideri.</string>
+    <string name="welcome_desc_2">Quando inclini il telefono, appare la seguente bolla che puo' essere premuta per cambiare l\'orientamento dello schermo.</string>
+    <string name="welcome_desc_3">La bolla puo' essere personalizzata in molti modi, falla tua!</string>
+    <string name="understood">Capito</string>
+
+    <!-- Main activity -->
+    <string name="enable">Attivare</string>
+    <string name="appearance">Aspetto</string>
+    <string name="bubble_color">Colore Bolla</string>
+    <string name="icon_color">Colore Icona</string>
+    <string name="size">Grandezza</string>
+    <string name="small">Piccola</string>
+    <string name="medium">Media</string>
+    <string name="large">Grande</string>
+    <string name="position">Posizione</string>
+    <string name="side">Lato</string>
+    <string name="side_popup_desc">Dove vuoi posizionare la bolla?</string>
+    <string name="left">A sinistra</string>
+    <string name="top">In cima</string>
+    <string name="right">A destra</string>
+    <string name="bottom">In basso</string>
+    <string name="offset">Compensazione</string>
+    <string name="others">Altro</string>
+    <string name="behavior_of_the_app">Comportamento</string>
+    <string name="behavior_desc">Modifica il comportamento dell\'applicazione</string>
+    <string name="apps_to_be_excluded">Applicazioni da escludere</string>
+    <string name="no_exception">Nessuna eccezione</string>
+    <string name="one_exception">1 eccezione</string>
+    <string name="many_exceptions">%d eccezioni</string>
+    <string name="notifications_desc">Nascondi le notifiche relative all\'applicazione</string>
+    <string name="about_desc">Informazioni sull\'applicazione</string>
+
+    <!-- Behavior activity -->
+    <string name="behavior">Comportamento</string>
+    <string name="portrait_on_lock">Modalita' verticale dopo lo sblocco</string>
+    <string name="portrait_on_lock_desc">Cambia l\'orientamento del telefono in modalita' verticale dopo aver bloccato il telefono.</string>
+    <string name="portrait_auto">Modalita' verticale automatica</string>
+    <string name="portrait_auto_desc">Cambia automaticamente l\'orientamento del telefono in modalita' verticale dopo essere stato in modalita' orizzontale.</string>
+    <string name="duration">Durata di visualizzazione delle bolle</string>
+    <string name="seconds">%d secondi</string>
+
+    <!-- Exceptions activity -->
+    <string name="exceptions">Eccezioni</string>
+    <string name="exceptions_desc">Deselezionare un\'applicazione in modo che la bolla non venga visualizzata quando si ruota il dispositivo.</string>
+    <string name="check_all">Selezina tutti</string>
+    <string name="uncheck_all">Deseleziona tutti</string>
+
+    <!-- Notifications activity -->
+    <string name="notifications">Notifiche</string>
+    <string name="app_notification">Notifica applicazione</string>
+    <string name="app_notification_desc">Per visualizzare la bolla su altre applicazioni, RL Bubble deve mostrare una notifica. Se si desidera nasconderla, e' possibile farlo dalle impostazioni del telefono facendo clic sul pulsante sottostante.</string>
+    <string name="app_notification_settings">Impostazioni notifiche</string>
+    <string name="system_notification">Notifica di sistema</string>
+    <string name="system_notification_desc">Quando la notifica RL Bubble e' nascosta, il sistema visualizza un\'altra notifica. Se si desidera nasconderla, e' possibile farlo dalle impostazioni del telefono facendo clic sul pulsante sottostante.</string>
+    <string name="system_notifications_settings">Impostazioni notifiche di sistema</string>
+
+    <!-- About activity -->
+    <string name="about">Informazioni</string>
+    <string name="charles_annic">Charles Annic</string>
+    <string name="cannic_mail">cannic.apps@gmail.com</string>
+    <string name="support_development">Sostieni lo sviluppo</string>
+    <string name="rate">Recensione</string>
+    <string name="rate_desc">Qualunque sia la tua opinione sulla mia applicazione, condividila sul Google Play Store!</string>
+    <string name="report_bugs">Segnala bug</string>
+    <string name="report_bugs_desc">Se riscontri un bug, fammelo sapere via e-mail. Faro' del mio meglio per correggerlo il prima possibile.</string>
+    <string name="improve_app">Migliora l\'applicazione</string>
+    <string name="improve_app_desc">e' possibile trovare il codice sorgente su GitHub per contribuire a migliorarlo. Sentitevi liberi di tradurre l\'applicazione nella vostra lingua!</string>
+    <string name="translate">Traduzione</string>
+    <string name="translate_desc">Se l\'applicazione non supporta ancora la vostra lingua, potete tradurla e inviarmela via e-mail. Potrei quindi aggiungerla e menzionarla.</string>
+    <string name="donate">Fai una donazione</string>
+    <string name="donate_desc">Questa applicazione e' gratuita e non contiene annunci pubblicitari. Se lo desideri, puoi fare una donazione. Grazie!</string>
+    <string name="library">Libreria</string>
+    <string name="libraries">Librerie</string>
+    <string name="colorpickerview">ColorPickView di Skydoves</string>
+    <string name="colorpickerview_desc">🎨La migliore e potente libreria di colorpicker</string>
+
+    <!-- Overlays permission popup -->
+    <string name="overlays_permission_popup_desc">Per funzionare, RL Bubble deve essere sovrapposta ad altre applicazioni. Premi qui per attivare l\'autorizzazione.</string>
+
+    <!-- Accessibility permission popup -->
+    <string name="accessibility_permission_popup_desc">Per poter escludere determinate applicazioni, RL Bubble deve avere accesso ai servizi di accessibilita' del dispositivo.\nQuesta autorizzazione consente a RL Bubble di sapere quale applicazione e' in uso.</string>
+    <string name="system_settings_accessibility_desc">Per poter escludere determinate applicazioni, RL Bubble deve avere accesso ai servizi di accessibilita' del dispositivo.\nQuesta autorizzazione consente a RL Bubble di sapere quale applicazione e' in uso.\nNon vengono raccolti dati personali.</string>
+
+    <!-- Various -->
+    <string name="missing_permission">Autorizzazione mancante</string>
+    <string name="cancel">Annulla</string>
+    <string name="confirm">Conferma</string>
+    <string name="give_permission">Dai autorizzazione</string>
+
+    <!-- Notification -->
+    <string name="notification_title">RL Bubble e' attivo</string>
+    <string name="notification_desc">E' possibile nascondere la notifica dall\'applicazione.</string>
+</resources>
