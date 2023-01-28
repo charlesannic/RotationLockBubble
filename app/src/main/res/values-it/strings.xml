@@ -7,7 +7,7 @@
     <string name="understood">Capito</string>
 
     <!-- Main activity -->
-    <string name="enable">Attivare</string>
+    <string name="enable">Attiva</string>
     <string name="appearance">Aspetto</string>
     <string name="bubble_color">Colore Bolla</string>
     <string name="icon_color">Colore Icona</string>
@@ -22,7 +22,7 @@
     <string name="top">In cima</string>
     <string name="right">A destra</string>
     <string name="bottom">In basso</string>
-    <string name="offset">Compensazione</string>
+    <string name="offset">Riallineare</string>
     <string name="others">Altro</string>
     <string name="behavior_of_the_app">Comportamento</string>
     <string name="behavior_desc">Modifica il comportamento dell\'applicazione</string>
@@ -62,7 +62,7 @@
     <string name="charles_annic">Charles Annic</string>
     <string name="cannic_mail">cannic.apps@gmail.com</string>
     <string name="support_development">Sostieni lo sviluppo</string>
-    <string name="rate">Recensione</string>
+    <string name="rate">Recensisci</string>
     <string name="rate_desc">Qualunque sia la tua opinione sulla mia applicazione, condividila sul Google Play Store!</string>
     <string name="report_bugs">Segnala bug</string>
     <string name="report_bugs_desc">Se riscontri un bug, fammelo sapere via e-mail. Faro\' del mio meglio per correggerlo il prima possibile.</string>
